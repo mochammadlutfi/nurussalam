@@ -27,22 +27,22 @@ jQuery(function () {
             $(element).closest(".form-group").removeClass("is-invalid"), jQuery(element).remove();
         },
         rules: {
-            // nama: {
-            //     required: true,
-            // },
-            // email: {
-            //     required: true,
-            //     email: true,
-            // },
-            // password: {
-            //     required: true,
-            //     minlength: 5,
-            // },
-            // password_confirmation: {
-            //     required: true,
-            //     minlength: 5,
-            //     equalTo: "#daftar-password"
-            // },
+            nama: {
+                required: true,
+            },
+            email: {
+                required: true,
+                email: true,
+            },
+            password: {
+                required: true,
+                minlength: 5,
+            },
+            password_confirmation: {
+                required: true,
+                minlength: 5,
+                equalTo: "#daftar-password"
+            },
         },
         messages: {
             nama: {

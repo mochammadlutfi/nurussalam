@@ -35,7 +35,8 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
 
     Route::prefix('ppdb')->group(function(){
 
-        Route::get('/peserta','PPDBController@index')->name('peserta');
+        Route::get('/formulir','PPDBController@index')->name('ppdb');
+        Route::get('/peserta','PPDBController@peserta')->name('ppdb.peserta');
         Route::post('/simpan','PPDBController@simpan')->name('ppdb.simpan');
         Route::get('/detail/{id}','PPDBController@detail')->name('ppdb.detail');
         Route::get('/edit/{id}','PPDBController@edit')->name('ppdb.edit');

@@ -1,6 +1,6 @@
 const mix = require('laravel-mix');
 mix
-    /* CSS Backend*/
+    /* CSS*/
     .sass('resources/sass/main.scss', 'public/css/app.css')
     .sass('resources/sass/codebase/themes/corporate.scss', 'public/css/themes/')
     .sass('resources/sass/codebase/themes/earth.scss', 'public/css/themes/')
@@ -8,7 +8,7 @@ mix
     .sass('resources/sass/codebase/themes/flat.scss', 'public/css/themes/')
     .sass('resources/sass/codebase/themes/pulse.scss', 'public/css/themes/')
 
-    /* JS Backend*/
+    /* JS*/
     .js('node_modules/popper.js/dist/popper.js', 'public/js').sourceMaps()
     .js('resources/js/app.js', 'public/js/laravel.app.js')
     // .js('resources/js/codebase/app.js', 'public/js/codebase.app.js')

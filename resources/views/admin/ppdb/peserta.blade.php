@@ -16,11 +16,11 @@
 
 <div class="content">
     <div class="content-heading pt-3 mb-3 d-none d-md-block">
-        Daftar Formulir PPDB
+        Daftar Peserta PPDB
     </div>
     <div class="block block-rounded block-shadow block-bordered d-md-block d-none mb-10">
         <div class="block-content p-2">
-            <div class="row justify-content-between mb-2">
+            {{-- <div class="row justify-content-between mb-2">
                 <div class="col-lg-4">
                     <select class="form-control" name="filter-status" id="filter-status">
                         <option value="">Semua Status</option>
@@ -45,7 +45,7 @@
                         <option value="SMA">SMA Islam Nurussalam</option>
                     </select>
                 </div>
-            </div>
+            </div> --}}
             <div class="row justify-content-between">
                 <div class="col-4">
                     <div class="has-search">
@@ -80,13 +80,12 @@
             <table class="table table-striped table-vcenter table-hover mb-0" id="data-list">
                 <thead class="thead-light">
                     <tr>
-                        <th width="15%" class="font-weight-bold">No. Registrasi</th>
-                        <th width="15%" class="font-weight-bold">Program</th>
-                        <th class="font-weight-bold">Peserta</th>
-                        <th class="font-weight-bold">Orang Tua Wali</th>
-                        <th width="15%" class="font-weight-bold">Ustadz Wali</th>
-                        <th class="font-weight-bold">Tanggal</th>
+                        <th width="4%" class="font-weight-bold">#</th>
+                        <th width="25%" class="font-weight-bold">Nama</th>
+                        <th width="15%" class="font-weight-bold">Alamat Email</th>
+                        <th width="15%"  class="font-weight-bold">Tanggal Daftar</th>
                         <th width="8%" class="font-weight-bold">Status</th>
+                        <th width="8%" class="font-weight-bold">AKSI</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -113,5 +112,5 @@
 <script src="{{ asset('js/plugins/select2/js/i18n/id.js') }}"></script>
 <script src="{{ asset('js/plugins/moment/moment-with-locales.min.js') }}"></script>
 <script src="{{ asset('js/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
-<script src="{{ asset('js/admin/ppdb/pendaftaran.js') }}"></script>
+<script src="{{ asset('js/admin/ppdb/peserta.js') }}"></script>
 @endpush

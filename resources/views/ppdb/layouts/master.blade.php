@@ -27,7 +27,7 @@
             </main>
             <!-- END Main Container -->
 
-            @include('ppdb.layouts.footer')
+            @include('umum.layouts.footer')
         </div>
         <script src="{{ asset('js/laroute.js') }}"></script>
         <script src="{{ asset('js/laravel.app.js') }}"></script>

@@ -28,10 +28,16 @@ class PPDBController extends Controller
 
     public function index(Request $request)
     {
-        $bank = PPDBRekening::latest()->get();
-        $ustadz = PPDBWali::where('is_active', 1)->orderBy('created_at', 'DESC')->get();
+        $ppdb = PPDB::where('peserta_id', auth()->guard('web')->user()->id)->first();
+        if(!$ppdb)
+        {
+            $bank = PPDBRekening::latest()->get();
+            $ustadz = PPDBWali::where('is_active', 1)->orderBy('created_at', 'DESC')->get();
 
-       return view('ppdb.pendaftaran', compact('bank', 'ustadz'));
+            return view('ppdb.pendaftaran', compact('bank', 'ustadz'));
+        }else{
+            return $this->detail();
+        }
     }
 
     public function save(Request $request)

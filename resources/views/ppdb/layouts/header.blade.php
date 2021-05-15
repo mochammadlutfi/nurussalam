@@ -22,7 +22,7 @@
                                 <i class="si si-user mr-5"></i> Profil
                             </a>
                             <a class="dropdown-item" href="#">
-                                <i class="si si-calendar mr-5"></i> Pendaftaran Saya
+                                <i class="si si-calendar mr-5"></i> Metode
                             </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -59,11 +59,19 @@
                             </a>
                         </li>
                         @endif
-                        <li>
-                            <a href="#">
-                                <i class="si si-check"></i> KONFIRMASI PEMBAYARAN
-                            </a>
-                        </li>
+                            @if(has_paid())
+                                <li>
+                                    <a href="{{ route('pembayaran.form') }}">
+                                        <i class="fa fa-check-circle"></i> KONFIRMASI PEMBAYARAN
+                                    </a>
+                                </li>
+                            @else
+                                <li>
+                                    <a href="{{ route('pembayaran') }}">
+                                        <i class="fa fa-money-check-alt"></i> METODE PEMBAYARAN
+                                    </a>
+                                </li>
+                            @endif
                         @endif
                     </ul>
                     

@@ -72,6 +72,8 @@ class RegisterController extends Controller
 
                 $user->sendEmailVerificationNotification();
 
+                auth()->guard('web')->attempt($request->only('email','password'));
+
             }catch(\QueryException $e){
                 DB::rollback();
                 return response()->json([

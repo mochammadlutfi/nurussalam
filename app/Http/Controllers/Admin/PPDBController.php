@@ -58,4 +58,17 @@ class PPDBController extends Controller
         return view('admin.ppdb.detail', compact('data'));
     }
 
+    public function peserta(Request $request)
+    {
+        if ($request->ajax()) {
+            $data = PPDBPeserta::
+            // ->where('wali_id', 'like', '%' . $request->ustadz . '%')
+            // ->where('status', 'like', '%' . $request->status . '%')
+            // ->where('program', 'like', '%' . $request->program . '%')
+            orderBy('created_at', 'DESC')->paginate(10);
+            return response()->json($data);
+        }
+        return view('admin.ppdb.peserta');
+    }
+
 }

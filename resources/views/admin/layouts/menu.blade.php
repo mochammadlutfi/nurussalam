@@ -45,7 +45,10 @@
             <span class="sidebar-mini-hide">PPDB</span></a>
         <ul>
             <li>
-                <a class="{{ Request::is('admin/peserta', 'admin/peserta/*') ? 'active' : null }}" href="{{ route('admin.peserta') }}">Peserta</a>
+                <a class="{{ Request::is('admin/formulir', 'admin/formulir/*') ? 'active' : null }}" href="{{ route('admin.ppdb') }}">Formulir</a>
+            </li>
+            <li>
+                <a class="{{ Request::is('admin/peserta', 'admin/peserta/*') ? 'active' : null }}" href="{{ route('admin.ppdb.peserta') }}">Peserta</a>
             </li>
             <li>
                 <a class="{{ Request::is('admin/ppdb/bayar', 'admin/ppdb/bayar/*') ? 'active' : null}}" href="{{ route('admin.ppdb.bayar') }}">Pembayaran</a>

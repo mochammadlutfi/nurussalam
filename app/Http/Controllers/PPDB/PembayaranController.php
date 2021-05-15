@@ -33,6 +33,9 @@ class PembayaranController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
+
+        // $cek = PPDBBayar::where('peserta_id')->
+        // if()
         
         $bank = PPDBRekening::latest()->get();
 
@@ -40,11 +43,20 @@ class PembayaranController extends Controller
     }
 
     public function form(){
-        $bank = PPDBRekening::latest()->get();
+        
+        $ppdb = PPDB::where('peserta_id', auth()->guard('web')->user()->id)->first();
+        $data = PPDBBayar::where('ppdb_id', $ppdb->id)->first();
+        if($data)
+        {
+            return $this->detail();
+        }else{
 
-        $ustadz = PPDBWali::where('is_active', 1)->orderBy('created_at', 'DESC')->get();
+            $bank = PPDBRekening::latest()->get();
 
-       return view('ppdb.pembayaran.form', compact('bank', 'ustadz'));
+            $ustadz = PPDBWali::where('is_active', 1)->orderBy('created_at', 'DESC')->get();
+
+            return view('ppdb.pembayaran.form', compact('bank', 'ustadz'));
+        }
     }
 
     public function save(Request $request)
@@ -116,6 +128,19 @@ class PembayaranController extends Controller
             return response()->json([
                 'fail' => false,
             ]);
+        }
+    }
+
+    public function detail()
+    {
+        $ppdb = PPDB::where('peserta_id', auth()->guard('web')->user()->id)->first();
+        $data = PPDBBayar::where('ppdb_id', $ppdb->id)->first();
+        if($data)
+        {
+            return view('ppdb.pembayaran.detail', compact('data'));
+        }else{
+            // return false
+            return $this->form();
         }
     }
 }

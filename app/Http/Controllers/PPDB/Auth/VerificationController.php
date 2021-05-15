@@ -34,7 +34,7 @@ class VerificationController extends Controller
         }
 
         return $request->user('web')->hasVerifiedEmail()
-            ? redirect()->route('beranda')
+            ? redirect()->route('form')
             : view('ppdb.auth.verify',[
                 'resendRoute' => 'verification.resend',
             ]);

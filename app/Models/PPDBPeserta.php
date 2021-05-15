@@ -24,8 +24,8 @@ class PPDBPeserta extends Authenticatable implements MustVerifyEmail
         'nama', 'email', 'password',
     ];
 
-    protected $append = [
-        'dari'
+    protected $appends = [
+        'created_at_frm', 'status_badge'
     ];
 
     /**
@@ -56,9 +56,10 @@ class PPDBPeserta extends Authenticatable implements MustVerifyEmail
         return count($this->ppdb);
     }
 
-    public function getDariAttribute($value)
+    public function getCreatedAtFrmAttribute()
     {
-        return ucwords(strtolower($this->kota->name).', '.strtolower($this->kota->provinsi->name));
+        Carbon::setLocale('id');
+        return Carbon::parse($this->attributes['created_at'])->translatedFormat('d-m-Y');
     }
 
     public function getLastLoginAtAttribute($value)
@@ -70,6 +71,15 @@ class PPDBPeserta extends Authenticatable implements MustVerifyEmail
     public function sendEmailVerificationNotification()
     {
         $this->notify(new PesertaEmailVerificationNotification);
+    }
+
+    public function getStatusBadgeAttribute()
+    {
+        if ($this->attributes['email_verified_at'] === NULL) {
+            return '<span class="badge badge-danger">Belum Verifikasi</span>';
+        } else{
+            return '<span class="badge badge-success">Terverifikasi</span>';
+        }
     }
     
 

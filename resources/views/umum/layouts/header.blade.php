@@ -10,7 +10,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col col-lg-9 d-lg-block d-none">
+                <div class="col d-lg-block d-none">
                     <ul class="float-right h-100 nav-main-header">
                         <li class="{{ Request::is('profile', 'profile/*') ? 'open' : null }}">
                             <a class="nav-submenu" data-toggle="nav-submenu" href="#">PROFILE</a>
@@ -70,6 +70,15 @@
                             <a href="{{ route('ppdb') }}">PPDB</a>
                         </li>
                     </ul>
+                </div>
+                
+                <div class="content-header-section my-auto">
+                    <!-- Toggle Sidebar -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                    <button type="button" class="btn btn-circle btn-dual-secondary d-lg-none" data-toggle="layout" data-action="sidebar_toggle">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- END Toggle Sidebar -->
                 </div>
             </div>
         </div>

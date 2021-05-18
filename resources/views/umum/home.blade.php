@@ -100,7 +100,7 @@
         </div>
         <div class="row justify-content-center pt-3">
             <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-stretch">
-                <a class="block block-link-pop block-bordered block-shadow block-rounded-2 c-pointer">
+                <a class="block block-link-pop block-bordered block-shadow block-rounded-2 c-pointer" href="{{ route('pendidikan.smp') }}">
                     <div class="block-content text-center">
                         <div class="thumnail mb-3">
                             <img src="{{ asset('img/logo/logo.png') }}" class="img-fluid w-75" alt="">
@@ -116,7 +116,7 @@
                 </a>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-stretch">
-                <a class="block block-link-pop block-bordered block-shadow block-rounded-2 c-pointer">
+                <a class="block block-link-pop block-bordered block-shadow block-rounded-2 c-pointer" href="{{ route('pendidikan.kmi') }}">
                     <div class="block-content text-center">
                         <div class="thumnail mb-3">
                             <img src="{{ asset('img/logo/logo.png') }}" class="img-fluid w-75" alt="">
@@ -130,7 +130,7 @@
                 </a>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 d-flex align-items-stretch">
-                <a class="block block-link-pop block-bordered block-shadow block-rounded-2 c-pointer">
+                <a class="block block-link-pop block-bordered block-shadow block-rounded-2 c-pointer" href="{{ route('pendidikan.sma') }}">
                     <div class="block-content text-center">
                         <div class="thumnail mb-3">
                             <img src="{{ asset('img/logo/logo.png') }}" class="img-fluid w-75" alt="">

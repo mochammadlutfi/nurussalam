@@ -14,8 +14,8 @@
 
                 <!-- Logo -->
                 <div class="content-header-item">
-                    <a href="{{ url('/mitra') }}">
-                        <img src="{{ asset('assets/img/logo/logo.png') }}" width="180px"/>
+                    <a href="{{ url('/') }}">
+                        <img src="{{ asset(settings()->get('app_logo')) }}" width="180px"/>
                     </a>
                 </div>
                 <!-- END Logo -->

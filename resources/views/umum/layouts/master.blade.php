@@ -10,7 +10,10 @@
     </head>
     <body>
 
-        <div id="page-container" class="sidebar-inverse side-scroll page-header-fixed main-content-boxed">
+        <div id="page-container" class="side-scroll page-header-fixed main-content-boxed">
+            <!-- Header -->
+            @include('umum.layouts.sidebar')
+            <!-- END Header -->
 
             <!-- Header -->
             @include('umum.layouts.header')

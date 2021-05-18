@@ -34,7 +34,7 @@
         </div>
         <!-- Side Navigation -->
         <div class="content-side content-side-full">
-            @include('admin.layouts.menu')
+            {{-- @include('admin.layouts.menu') --}}
         </div>
         <!-- END Side Navigation -->
     </div>

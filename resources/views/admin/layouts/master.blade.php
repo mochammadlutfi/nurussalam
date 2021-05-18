@@ -19,6 +19,7 @@
 
         <div id="page-container" class="sidebar-o enable-page-overlay side-scroll page-header main-content-boxed">
 
+           <!-- Sidebar -->
             @include('admin.layouts.sidebar')
             <!-- END Sidebar -->
 

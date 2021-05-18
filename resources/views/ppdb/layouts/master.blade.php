@@ -12,8 +12,9 @@
     </head>
     <body>
 
-        <div id="page-container" class="sidebar-inverse side-scroll page-header-fixed main-content-boxed">
+        <div id="page-container" class="sidebar-o side-scroll page-header-fixed main-content-boxed">
 
+            
             <!-- Header -->
             @include('ppdb.layouts.header')
             <!-- END Header -->

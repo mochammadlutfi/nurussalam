@@ -4,9 +4,9 @@
         <div class="content-header-section w-100">
             <div class="row no-gutters">
                 <div class="col col-lg-3 d-flex">
-                    <div class="content-header-item">
+                    <div class="content-header-item height-75">
                         <a href="{{ url('/') }}">
-                            <img src="{{ asset('img/logo/ppdb_logo.png') }}" class="img-fluid"/>
+                            <img src="{{ asset('img/logo/ppdb_logo.png') }}" class="img-fluid h-100"/>
                         </a>
                     </div>
                 </div>

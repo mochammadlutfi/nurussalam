@@ -229,47 +229,52 @@ jQuery(document).ready(function () {
         }
     });
 
-    $(document).on('click', '.btn-edit', function () { 
+    $(document).on('click', '.btn-delete', function () { 
         var id = $(this).attr('data-id');
-        $.ajax({
-            url: laroute.route('admin.galeri.edit', { id: id }),
-            type: "GET",
-            dataType: "JSON",
-            beforeSend: function(){
-                Swal.fire({
-                    title: 'Tunggu Sebentar...',
-                    text: ' ',
-                    imageUrl: laroute.url('assets/img/loading.gif', ['']),
-                    showConfirmButton: false,
-                    allowOutsideClick: false,
-                });
-            },
-            success: function(data) {
-                Swal.close();
-                $('#form-album')[0].reset();
-                $('.form-group').removeClass('is-valid');
-                $('.form-group').removeClass('is-invalid');
-                modal.modal({
-                    backdrop: 'static',
-                    keyboard: false
-                });
-
-                // modal.find('h5.modal-title').html('Ubah Alamat');
-                modal.find('input#field-id').val(data.id);
-                modal.find('input#metode').val('update');
-                modal.find('input#field-nama').val(data.nama);
-                modal.find('textarea#field-deskripsi').val(data.deskripsi);
-                modal.find('img#img_preview').attr("src", laroute.url(data.foto, ['']));
-                if(data.status === '1')
-                {
-                    modal.find('#status_publikasi').prop("checked", true);
-                }else{
-                    modal.find('#status_draft').prop("checked", true);
+        Swal.fire({
+            title: "Anda Yakin?",
+            text: "Data Yang Dihapus Tidak Akan Bisa Dikembalikan",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: 'Ya, Hapus!',
+            cancelButtonText: 'Tidak, Batalkan!',
+            reverseButtons: true,
+            allowOutsideClick: false,
+            confirmButtonColor: '#af1310',
+            cancelButtonColor: '#fffff',
+        })
+        .then((result) => {
+            if (result.value) {
+            $.ajax({
+                url: laroute.route('admin.slider.hapus', { id: id }),
+                type: "GET",
+                dataType: "JSON",
+                beforeSend: function(){
+                    Swal.fire({
+                        title: 'Tunggu Sebentar...',
+                        text: ' ',
+                        imageUrl: laroute.url('public/img/loading.gif', ['']),
+                        showConfirmButton: false,
+                        allowOutsideClick: false,
+                    });
+                },
+                success: function(data) {
+                    Swal.fire({
+                        title: "Berhasil",
+                        text: 'Data Berhasil Dihapus!',
+                        timer: 3000,
+                        showConfirmButton: false,
+                        icon: 'success'
+                    });
+                    load_content();
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    Swal.close();
+                    alert('Error deleting data');
                 }
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
+            });
+            }else{
                 Swal.close();
-                alert('Error deleting data');
             }
         });
     });
@@ -288,8 +293,10 @@ function load_content()
         },
         beforeSend: function(){
             $('#loading').removeClass('d-none');
+            $('#data-list').html('');
         },
         success: function(response) {
+            $('#data-list').html('');
             if(response.data.length !== 0){
                 $.each(response.data, function(k, v) {
                     $('#data-list').append(`<div class="col-lg-4">
@@ -306,9 +313,9 @@ function load_content()
                                     <a class="btn btn-secondary btn-sm js-tooltip" data-toggle="tooltip" data-placement="top" title="Ubah"  href="${ laroute.route('admin.slider.edit', {id : response.data[k].id }) }">
                                         <i class="si si-note"></i>
                                     </a>
-                                    <a class="btn btn-secondary btn-sm js-tooltip" data-toggle="tooltip" data-placement="top" title="Hapus" href="javascript:void(0)">
+                                    <button class="btn btn-secondary btn-sm js-tooltip btn-delete" data-toggle="tooltip" data-placement="top" title="Hapus" type="button" data-id="${ response.data[k].id }">
                                         <i class="si si-trash"></i>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>

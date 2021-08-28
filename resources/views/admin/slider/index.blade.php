@@ -24,7 +24,8 @@
                                 <i class="fa fa-search"></i>
                             </span>
                         </div>
-                        <input type="text" class="form-control" id="pencarian" name="keyword" placeholder="Masukan Kata Kunci">
+                        <input type="text" class="form-control" id="pencarian" name="keyword"
+                            placeholder="Masukan Kata Kunci">
                     </div>
                 </div>
                 <div class="col-4">

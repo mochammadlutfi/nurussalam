@@ -69,7 +69,7 @@ $(function () {
                             icon: 'success'
                         });
                         window.setTimeout(function () {
-                            location.reload();
+                            location.href = laroute.route('form');
                         }, 1500);
                     } else {
                         Swal.fire({

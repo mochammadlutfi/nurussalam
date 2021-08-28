@@ -43,16 +43,17 @@ class RegisterController extends Controller
     {
         $rules = [
             'nama' => 'required',
-            'email' => 'required',
-            // 'password' => 'required',
-            // 'password_confirmation' => 'required',
+            'email' => 'required|unique:ppdb_peserta,email',
+            'password' => 'required',
+            'password_confirmation' => 'required',
         ];
 
         $pesan = [
             'nama.required' => 'Nama Bisnis Wajib Diisi!',
             'email.required' => 'Alamat Email Wajib Diisi!',
-            // 'password.required' => 'Kata Sandi Wajib Diisi!',
-            // 'password_confirmation.required' => 'Konfirmasi Kata Sandi Wajib Diisi!',
+            'email.unique' => 'Alamat Email Sudah Terdaftar!',
+            'password.required' => 'Kata Sandi Wajib Diisi!',
+            'password_confirmation.required' => 'Konfirmasi Kata Sandi Wajib Diisi!',
         ];
 
         $validator = Validator::make($request->all(), $rules, $pesan);

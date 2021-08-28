@@ -2,7 +2,8 @@
     <!-- Sidebar Content -->
     <div class="sidebar-content">
         <!-- Side Header -->
-        <div class="content-header content-header-fullrow p-2">
+        <div class="content-header content-header-fullrow px-15">
+
             <!-- Normal Mode -->
             <div class="content-header-section text-center align-parent sidebar-mini-hidden">
                 <!-- Close Sidebar, Visible only on mobile screens -->
@@ -14,30 +15,17 @@
 
                 <!-- Logo -->
                 <div class="content-header-item">
-                    <a href="{{ url('/mitra') }}">
-                        <img src="{{ asset('img/logo/logo.png') }}" width="180px"/>
+                    <a href="{{ url('/admin') }}">
+                        <img src="{{ asset(settings()->get('app_logo')) }}" width="180px"/>
                     </a>
                 </div>
                 <!-- END Logo -->
             </div>
             <!-- END Normal Mode -->
         </div>
-        <!-- END Side Header -->
-        @if(Auth::guard('web')->check())
-         <!-- Toko -->
-         <div class="align-parent bg-body-light border-2x border-bottom content-side px-10">
-            <!-- Visible only in normal mode -->
-            <div class="sidebar-mini-hidden-b text-center">
-                <img class="img-toko img-toko96" src="{{ get_toko_img(Auth::guard('web')->user()->bisnis->logo) }}" alt="">
-                <div class="font-size-lg font-w600 py-3 text-dual-primary-dark" href="#">{{ Auth::guard('web')->user()->bisnis->nama }}</div>
-            </div>
-            <!-- END Visible only in normal mode -->
-        </div>
-        <!-- END Toko -->
-        @endif
         <!-- Side Navigation -->
         <div class="content-side content-side-full">
-            @include('umum.layouts.menu')
+            @include('ppdb.layouts.menu')
         </div>
         <!-- END Side Navigation -->
     </div>

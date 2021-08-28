@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="content" id="appContent">
-    <div class="mt-lg-5 block block-shadow block-rounded block-bordered block-rounded-2">
+    <div class="block block-shadow block-rounded block-bordered block-rounded-2">
         <div class="block-content py-0 pl-0">
             <div class="row">
                 <div class="col-lg-7">
@@ -52,7 +52,7 @@
                         </div>
                         <div class="form-group">
                             <label for="daftar-password_confirmation">Konfirmasi Password</label>
-                            <div class="input-group" id="show_hide_password">
+                            <div class="input-group" id="show_hide_password2">
                                 <input type="password" class="form-control" id="daftar-password_confirmation" name="password_confirmation" placeholder="Masukan Password" autocomplete>
                                 <div class="input-group-append">
                                     <span class="input-group-text">

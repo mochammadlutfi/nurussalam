@@ -2,20 +2,21 @@
 
 @section('content')
 <div class="content">
-    <div class="row mt-50 justify-content-center">
+    <div class="row justify-content-center">
         <div class="col-lg-5">
             <div class="block block-rounded block-shadow">
                 <div class="block-content">
                     <div class="text-center">
-                        <h2 class="h5 font-w700">
-                            Silakan masuk ke dalam akun kamu. <br>Belum punya akun? <a href="{{ route('daftar') }}">Daftar</a> Disini
+                        <h2 class="h5 font-w700 mb-0">
+                            Silakan masuk ke dalam akun kamu.
                         </h2>
+                        <p class="nice-copy my-0">Belum punya akun? <a href="{{ route('daftar') }}">Daftar</a> Disini</p>
                     </div>
                     <form method="POST" id="loginForm" onsubmit="return false">
                         @csrf
                         <div class="form-group row mb-2">
                             <div class="col-12">
-                                <label for="login-email">Username/Email</label>
+                                <label for="login-email">Email</label>
                                 <input type="text" class="form-control" id="login-email" name="email" placeholder="Masukan Alamat Email">
                                 <div class="invalid-feedback font-size-sm" id="error-email"></div>
                             </div>

@@ -3,6 +3,9 @@ node_modules/
 npm-debug.log
 yarn-error.log
 
+# laravel 8 specific
+public/js/laroute.js
+
 # Laravel 4 specific
 bootstrap/compiled.php
 app/storage/
@@ -16,6 +19,7 @@ public_html/storage
 public_html/hot
 
 storage/*.key
+.env
 Homestead.yaml
 Homestead.json
 /.vagrant

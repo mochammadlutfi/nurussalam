@@ -12,8 +12,11 @@
     </head>
     <body>
 
-        <div id="page-container" class="sidebar-o side-scroll page-header-fixed main-content-boxed">
+        <div id="page-container" class="enable-page-overlay side-scroll page-header main-content-boxed">
 
+           <!-- Sidebar -->
+           @include('ppdb.layouts.sidebar')
+           <!-- END Sidebar -->
             
             <!-- Header -->
             @include('ppdb.layouts.header')
